@@ -1,0 +1,16 @@
+{
+  "name": "aiwalkthru",
+  "owner": {
+    "name": "AI Walkthru"
+  },
+  "plugins": [
+    {
+      "name": "content-team",
+      "source": "./",
+      "description": "An eight-person content team inside Claude, run together with /content-team."
+    }
+  ],
+  "metadata": {
+    "description": "Free Claude plugins from AI Walkthru."
+  }
+}

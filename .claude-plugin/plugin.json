@@ -1,0 +1,7 @@
+{
+  "name": "content-team",
+  "version": "0.1.0",
+  "description": "An eight-person content team inside Claude: strategist, trend researcher, script writer, thumbnail designer, video editor, SEO specialist, social media manager and community manager, run together with /content-team.",
+  "author": { "name": "AI Walkthru" },
+  "keywords": ["content", "youtube", "instagram", "tiktok", "creator"]
+}

@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Content Team — free Claude plugin by AI Walkthru</title>
+<meta name="description" content="Eight AI specialists inside Claude, run with one command. Free plugin, installs in five clicks.">
+<meta property="og:title" content="Content Team — a free Claude plugin">
+<meta property="og:description" content="Eight AI specialists inside Claude, run with one command.">
+<meta property="og:image" content="https://clevernat.github.io/content-team/img/slide-1.jpg">
+<link rel="icon" href="img/avatar.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F6F5F2;--card:#fff;--ink:#141413;--mute:#6B6A66;--line:#E3E1DB;--acc:#C8553D;--acc2:#FBEDE8;--dark:#141413}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.5}
+a{color:inherit}
+code{font-family:"JetBrains Mono",ui-monospace,monospace;font-size:.92em;color:var(--acc);font-weight:600}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+nav{display:flex;align-items:center;gap:12px;padding:18px 0}
+nav img{width:40px;height:40px;border-radius:50%}
+nav b{font-weight:700}nav span{color:var(--mute);font-size:14px}
+nav .links{margin-left:auto;display:flex;gap:18px;font-size:15px;font-weight:500}
+nav .links a{text-decoration:none;color:var(--mute)}nav .links a:hover{color:var(--ink)}
+.hero{background:var(--dark);color:#fff;border-radius:24px;padding:56px 40px;position:relative;overflow:hidden;margin-top:6px}
+.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(700px 420px at 90% 0%,rgba(200,85,61,.55),transparent 60%),radial-gradient(500px 360px at 0% 100%,rgba(200,85,61,.22),transparent 60%);pointer-events:none}
+.hero>*{position:relative}
+.pill{display:inline-block;background:#fff;color:var(--ink);font-size:13px;font-weight:700;padding:6px 14px;border-radius:999px}
+h1{font-size:clamp(44px,8vw,86px);line-height:.98;letter-spacing:-.045em;font-weight:800;margin:18px 0 14px}
+h1 em{font-style:normal;color:var(--acc)}
+.lead{font-size:clamp(18px,2.4vw,22px);color:rgba(255,255,255,.78);max-width:620px}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px;align-items:center}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--acc);color:#fff;text-decoration:none;font-weight:700;font-size:18px;padding:16px 26px;border-radius:14px;transition:transform .15s ease,background .15s ease}
+.btn:hover{transform:translateY(-1px);background:#b44a33}
+.btn.ghost{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2)}
+.btn svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.note{font-size:14px;color:rgba(255,255,255,.6);margin-top:14px}
+.team{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:40px}
+.team div{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:14px}
+.team b{display:block;font-size:15px}.team span{font-size:13px;color:rgba(255,255,255,.6)}
+section{padding:64px 0 8px}
+.k{font-size:13px;font-weight:700;color:var(--acc);letter-spacing:.08em;text-transform:uppercase}
+h2{font-size:clamp(30px,4.5vw,44px);letter-spacing:-.03em;line-height:1.08;margin:8px 0 10px}
+.sub{color:var(--mute);font-size:18px;max-width:640px}
+.tabs{display:inline-flex;background:#ECEAE4;border-radius:12px;padding:4px;margin-top:26px}
+.tabs button{border:0;background:transparent;font:600 15px Inter,sans-serif;padding:10px 18px;border-radius:9px;cursor:pointer;color:var(--mute)}
+.tabs button[aria-selected=true]{background:#fff;color:var(--ink);box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.panel{margin-top:22px}
+.panel[hidden]{display:none}
+.steps{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px}
+.step{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.step img{width:100%;display:block;border-bottom:1px solid var(--line);aspect-ratio:4/5;object-fit:cover}
+.step .t{padding:16px 18px}
+.step .n{display:inline-flex;width:28px;height:28px;border-radius:50%;background:var(--acc);color:#fff;font-weight:700;font-size:14px;align-items:center;justify-content:center;margin-right:8px}
+.step b{font-size:17px}
+.step p{color:var(--mute);font-size:15px;margin-top:4px}
+.code{background:var(--dark);color:#EDEBE6;border-radius:16px;padding:22px 24px;font:500 16px/1.8 "JetBrains Mono",monospace;position:relative;overflow-x:auto}
+.code .c{color:#8E8B84}
+.copy{position:absolute;top:14px;right:14px;background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.2);border-radius:8px;font:600 13px Inter,sans-serif;padding:6px 12px;cursor:pointer}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px 24px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.proof{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:26px}
+.proof img{width:100%;border-radius:18px;border:1px solid var(--line);display:block}
+details{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 20px;margin-top:10px}
+summary{font-weight:600;cursor:pointer}
+details p{color:var(--mute);margin-top:8px}
+footer{padding:56px 0 40px;color:var(--mute);font-size:14px;display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+footer img{width:36px;height:36px;border-radius:50%}
+@media (max-width:720px){
+  .hero{padding:40px 22px}.team{grid-template-columns:repeat(2,1fr)}
+  .grid2,.proof{grid-template-columns:1fr}nav .links{display:none}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav><img src="img/avatar.jpg" alt=""><div><b>AI Walkthru</b><br><span>@aiwalkthru</span></div>
+<div class="links"><a href="#install">Install</a><a href="#proof">Real output</a><a href="#faq">FAQ</a><a href="https://github.com/clevernat/content-team">GitHub</a></div></nav>
+
+<header class="hero">
+  <span class="pill">Free Claude plugin</span>
+  <h1>8 AI <em>employees</em><br>inside Claude.</h1>
+  <p class="lead">A strategist, researcher, script writer, editor, thumbnail designer, SEO specialist, social manager and community manager. One command runs them all: <code style="color:#F4B9A9">/content-team</code></p>
+  <div class="cta">
+    <a class="btn" href="https://github.com/clevernat/content-team/releases/latest/download/content-team.plugin" download>
+      <svg viewBox="0 0 24 24"><path d="M12 3v12M7 10l5 5 5-5M4 20h16"/></svg>Download the plugin</a>
+    <a class="btn ghost" href="#install">How to install</a>
+  </div>
+  <p class="note">11 KB · Works on Claude Pro, Max, Team and Enterprise · No code, no connectors</p>
+  <div class="team">
+    <div><b>Strategist</b><span>Angle and promise</span></div>
+    <div><b>Trend researcher</b><span>Why now, sourced</span></div>
+    <div><b>Script writer</b><span>Hook + timed script</span></div>
+    <div><b>Video editor</b><span>Shot list, pacing</span></div>
+    <div><b>Thumbnail designer</b><span>3 cover concepts</span></div>
+    <div><b>SEO specialist</b><span>Titles, tags</span></div>
+    <div><b>Social manager</b><span>Captions, schedule</span></div>
+    <div><b>Community manager</b><span>Pinned comment, replies</span></div>
+  </div>
+</header>
+
+<section id="install">
+  <div class="k">Install</div>
+  <h2>Pick how you use Claude.</h2>
+  <p class="sub">Most people use the Claude app or claude.ai. If you code in Claude Code, use the second tab.</p>
+  <div class="tabs" role="tablist">
+    <button role="tab" aria-selected="true" aria-controls="p-app" id="t-app">Claude app / claude.ai</button>
+    <button role="tab" aria-selected="false" aria-controls="p-code" id="t-code">Claude Code</button>
+  </div>
+
+  <div class="panel" id="p-app" role="tabpanel" aria-labelledby="t-app">
+    <div class="steps">
+      <div class="step"><img src="img/slide-4.jpg" alt="Claude sidebar with Customize highlighted" loading="lazy"><div class="t"><span class="n">1</span><b>Download, then open Customize</b><p>Get the file with the button above. In Claude, click Customize in the left sidebar.</p></div></div>
+      <div class="step"><img src="img/slide-5.jpg" alt="Plugins tab and the Add menu with Upload plugin highlighted" loading="lazy"><div class="t"><span class="n">2</span><b>Plugins → + Add → Upload plugin</b><p>Three clicks at the top of the Customize page.</p></div></div>
+      <div class="step"><img src="img/slide-6.jpg" alt="Upload page with the plugin file and the Upload button" loading="lazy"><div class="t"><span class="n">3</span><b>Drop in the file, press Upload</b><p>You'll see “Content team is installed and ready to use.”</p></div></div>
+      <div class="step"><img src="img/slide-7.jpg" alt="The slash menu listing the content-team skills" loading="lazy"><div class="t"><span class="n">4</span><b>Type /content-team + your topic</b><p>Open a new chat, pick it from the <code>/</code> menu, add your idea and send.</p></div></div>
+    </div>
+  </div>
+
+  <div class="panel" id="p-code" role="tabpanel" aria-labelledby="t-code" hidden>
+    <div class="grid2">
+      <div>
+        <div class="code"><button class="copy" data-copy="/plugin marketplace add clevernat/content-team&#10;/plugin install content-team@aiwalkthru">Copy</button><span class="c"># inside Claude Code</span><br>/plugin marketplace add clevernat/content-team<br>/plugin install content-team@aiwalkthru</div>
+      </div>
+      <div class="card"><b>Then run it</b><p class="sub" style="font-size:16px;margin-top:6px">Use <code>/content-team</code> followed by your topic. Each role is also its own skill, so <code>/script-writer</code> or <code>/seo-specialist</code> work on their own.</p><p class="sub" style="font-size:16px;margin-top:10px">Source: plain Markdown skills in <a href="https://github.com/clevernat/content-team/tree/main/skills">/skills</a>. Fork it and make it yours.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="proof">
+  <div class="k">Real output</div>
+  <h2>One command. About four minutes.</h2>
+  <p class="sub">Screenshots from a real run: it searched the web, then every role reported back. Nothing edited.</p>
+  <div class="proof">
+    <img src="img/slide-8.jpg" alt="Claude's reply: angle, hook, title and a timed script" loading="lazy">
+    <img src="img/slide-9.jpg" alt="Claude's reply: five titles and a community reply bank" loading="lazy">
+  </div>
+</section>
+
+<section id="faq">
+  <div class="k">FAQ</div>
+  <h2>Good questions.</h2>
+  <details><summary>Does it work on the free Claude plan?</summary><p>No. Claude plugins need a paid plan: Pro, Max, Team or Enterprise.</p></details>
+  <details><summary>Is it safe?</summary><p>It only adds instructions for Claude. There are no connectors, no code that runs, and nothing new is sent anywhere. Every file is readable on GitHub.</p></details>
+  <details><summary>Can I change it?</summary><p>Yes. It's MIT licensed. Download the source, edit the skills, and upload your own version.</p></details>
+  <details><summary>How do I remove it?</summary><p>Customize → Plugins → Yours → Content team → ⋮ → Remove.</p></details>
+</section>
+
+<footer><img src="img/avatar.jpg" alt=""><span>Made by <a href="https://www.youtube.com/@aiwalkthru">AI Walkthru</a>, step-by-step AI tutorials shown live on screen.</span></footer>
+</div>
+<script>
+const tabs=[...document.querySelectorAll('[role=tab]')];
+tabs.forEach(t=>t.addEventListener('click',()=>{tabs.forEach(x=>{x.setAttribute('aria-selected',x===t);document.getElementById(x.getAttribute('aria-controls')).hidden=x!==t;});}));
+document.querySelectorAll('.copy').forEach(b=>b.addEventListener('click',async()=>{try{await navigator.clipboard.writeText(b.dataset.copy);b.textContent='Copied';setTimeout(()=>b.textContent='Copy',1500);}catch(e){}}));
+</script>
+</body>
+</html>
